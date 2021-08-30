@@ -6,21 +6,30 @@ function App() {
 
   const [input,setInput] = React.useState('');
   const [names,setNames] = React.useState([]);
+  const [selection, setSelection] = React.useState('');
 
   const handleChange = event => {
     return(setInput(event.target.value));
   }
 
   const handleRemoveName = item => {
-    const index = names.indexOf(item);
-    const newNames = names.splice(index,1);
-    
-    setNames(newNames);
+    setNames(names.filter(n => n !== item));
   };
 
   const handleAddName = (item) => {
     const newNames = names.concat({id: d.getTime(), name: item});
     setNames(newNames);
+    setInput('');
+  }
+
+  const handleSelectRandom = () => {
+    if(names.length === 0){
+      setSelection("No Names To Select From");
+    }
+    else{
+      const randomElem = names[Math.floor(Math.random() * names.length)].name;
+      setSelection(randomElem);
+    }
   }
   
   return (
@@ -30,7 +39,7 @@ function App() {
       <label htmlFor="textBox">Input Name: </label>
       <input id="nameBox" type="text" value={input} onChange={handleChange}/>
       &nbsp;
-      <button type="button" onClick={ () => handleAddName(input)}>
+      <button id="addName" type="button" onClick={ () => handleAddName(input)}>
         Submit
       </button>
 
@@ -38,6 +47,9 @@ function App() {
           list={names}
           onRemoveItem={handleRemoveName}
     />
+
+      <button id="pickName" type="button" onClick={handleSelectRandom}>Pick Name</button>
+      <p>Winner: {selection}</p>
     </div>
     
   ); 
