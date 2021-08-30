@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 function App() {
 
@@ -28,28 +29,30 @@ function App() {
     }
     else{
       const randomElem = names[Math.floor(Math.random() * names.length)].name;
-      setSelection(randomElem);
+      setSelection("The selected name is: " + randomElem);
     }
   }
   
   return (
-    <div>
+    <div className='mainDiv'>
       <h1>Random Name Picker</h1>
+      <div className='submitNames'>
+        <label htmlFor="textBox">Input Name: </label>
+        <input id="nameBox" type="text" value={input} onChange={handleChange}/>
+        &nbsp;
+        <button id="addName" type="button" onClick={ () => handleAddName(input)}>
+          Submit
+        </button>
+      </div>
 
-      <label htmlFor="textBox">Input Name: </label>
-      <input id="nameBox" type="text" value={input} onChange={handleChange}/>
-      &nbsp;
-      <button id="addName" type="button" onClick={ () => handleAddName(input)}>
-        Submit
-      </button>
-
-    <List
-          list={names}
-          onRemoveItem={handleRemoveName}
-    />
+      <List
+            className='nameList'
+            list={names}
+            onRemoveItem={handleRemoveName}
+      />
 
       <button id="pickName" type="button" onClick={handleSelectRandom}>Pick Name</button>
-      <p>Winner: {selection}</p>
+      <p>{selection}</p>
     </div>
     
   ); 
@@ -58,6 +61,7 @@ function App() {
 const List = ({ list, onRemoveItem }) =>
   list.map(item => (
     <Item
+      className='listedName'
       key={item.id}
       item={item}
       onRemoveItem={onRemoveItem}
@@ -65,11 +69,11 @@ const List = ({ list, onRemoveItem }) =>
 ));
 
 const Item = ({item, onRemoveItem}) => (
-  <div>
-    <span>{item.name}</span>
+  <div className='listedName'>
+    <span className='nameText'>{item.name}</span>
 
     <span>
-      <button type="button" onClick={() => onRemoveItem(item)}>
+      <button className='dismissButton' type="button" onClick={() => onRemoveItem(item)}>
         Dismiss
       </button>
     </span>
