@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Random Name Selector Website
+
+My friends and I often find ourselves in situations where we want to decide who should go first in a given activity. Finding a fair way of selecting a name randomly was my inspiration for this project.
+
+All the user has to do is enter the names that it wants the website to select from, and then click "Pick Name". The website will then choose a random name from the given options.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
