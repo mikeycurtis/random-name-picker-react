@@ -1,4 +1,7 @@
 body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #303d38;
 }
 
@@ -12,24 +15,107 @@ body{
   padding: 10;
 }
 
-.namesList {
-  text-align: center;
+.box {
+  width: 300px;
 }
 
-.listedName{
+.box h2 {
+  color: #fff;
+  background: #196e4c;
+  padding: 10px 20px;
+  margin-bottom: 0px;
+  font-size: 20px;
+  font-weight: 700;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.box .nameList {
+  position: relative;
+  background: white;
+}
+
+.box .enteredNames {
+  list-style: none;
+  font-size: 18px;
+  padding: 10px;
+  width:94%;
+  background: #fff;
+  box-shadow: 0 5px 25px rgba(0,0,0,.1);
+  transition: transform 0.5s;
+}
+
+.dismissButton {
+  display: none;
+  margin-left: 20px;
+  box-shadow: 0;
+  border-style: solid;
+  background: #fff;
+  border-color: transparent;
+  color: #196e4c;
+}
+
+.box .enteredNames:hover .dismissButton {
+  display: inline-block;
+}
+.box .enteredNames:hover{
+  transform: scale(1.1);
+  z-index: 100;
+  background:#1dbf81;
+  color: #fff;
+}
+
+#pickName {
+  margin-top: 50px;
+  box-shadow: 0;
+  border-style: solid;
+  background: #fff;
+  border-color: transparent;
+  border-radius: 10px;
+  border-width: 3px;
+  color: #196e4c;
+  font-size: 20px;
+}
+
+#pickName:hover {
+  border-color: #196e4c;
+}
+
+.selection {
+  font-size: 20px;
+  color: #fff;
+
+}
+/*
+.enteredNames {
+  margin: auto;
+  width: auto;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.nameAndDelete {
+  background-color: #088052;
+  border-radius: 25px;
+  float: left;
+  display:inline;
+  
+}
+
+.nameText {
   position:relative;
   color: white;
-  border-radius: 25px;
   height: 40px;
-  background-color: #088052;
   margin: 10px;
-  width: 400px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: auto;
   text-align: center;
-}
-
-.listedName .nameText {
-  font-size: 30px;
+  font-size: 20px;
   margin-right: 10px;
+  
 }
 
 .listedName .dismissButton {
@@ -42,3 +128,4 @@ body{
 .listedName .dismissButton:hover {
   background-color: #303d38;
 }
+*/

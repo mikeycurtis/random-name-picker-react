@@ -45,14 +45,16 @@ function App() {
         </button>
       </div>
 
-      <List
-            className='nameList'
-            list={names}
-            onRemoveItem={handleRemoveName}
-      />
-
+      <div className="box">
+        <h2>Names</h2>
+        <List
+              className='nameList'
+              list={names}
+              onRemoveItem={handleRemoveName}
+        />
+      </div>
       <button id="pickName" type="button" onClick={handleSelectRandom}>Pick Name</button>
-      <p>{selection}</p>
+      <p className="selection">{selection}</p>
     </div>
     
   ); 
@@ -69,7 +71,7 @@ const List = ({ list, onRemoveItem }) =>
 ));
 
 const Item = ({item, onRemoveItem}) => (
-  <div className='listedName'>
+  <div className='enteredNames'>
     <span className='nameText'>{item.name}</span>
 
     <span>
