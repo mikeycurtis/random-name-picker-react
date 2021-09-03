@@ -47,12 +47,18 @@ body{
 
 .dismissButton {
   display: none;
+  width: 20%;
   margin-left: 20px;
   box-shadow: 0;
   border-style: solid;
-  background: #fff;
+  background: transparent;
   border-color: transparent;
   color: #196e4c;
+}
+
+.dismissButton:hover > svg > g{
+  fill: white;
+  stroke: white;
 }
 
 .box .enteredNames:hover .dismissButton {
@@ -86,46 +92,3 @@ body{
   color: #fff;
 
 }
-/*
-.enteredNames {
-  margin: auto;
-  width: auto;
-  padding: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.nameAndDelete {
-  background-color: #088052;
-  border-radius: 25px;
-  float: left;
-  display:inline;
-  
-}
-
-.nameText {
-  position:relative;
-  color: white;
-  height: 40px;
-  margin: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: auto;
-  text-align: center;
-  font-size: 20px;
-  margin-right: 10px;
-  
-}
-
-.listedName .dismissButton {
-  background-color: #4d5c56;
-  border-radius: 8px;
-  color: white;
-  font-size: 20px;
-}
-
-.listedName .dismissButton:hover {
-  background-color: #303d38;
-}
-*/

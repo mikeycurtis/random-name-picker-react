@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {ReactComponent as Cancel} from './cancel.svg';
 
 function App() {
 
@@ -36,14 +37,14 @@ function App() {
   return (
     <div className='mainDiv'>
       <h1>Random Name Picker</h1>
-      <div className='submitNames'>
+      <form className='submitNames'>
         <label htmlFor="textBox">Input Name: </label>
         <input id="nameBox" type="text" value={input} onChange={handleChange}/>
         &nbsp;
         <button id="addName" type="button" onClick={ () => handleAddName(input)}>
           Submit
         </button>
-      </div>
+      </form>
 
       <div className="box">
         <h2>Names</h2>
@@ -76,7 +77,7 @@ const Item = ({item, onRemoveItem}) => (
 
     <span>
       <button className='dismissButton' type="button" onClick={() => onRemoveItem(item)}>
-        Dismiss
+        <Cancel height="18px" width="18px" backgroundcolor="transparent"/>
       </button>
     </span>
   </div>
